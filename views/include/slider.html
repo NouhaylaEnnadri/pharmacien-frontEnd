@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our - Partners</title>
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+</head>
+<body>
+    
+    <div class="slider" id="slider-content">
+        <div class="section-title from-blog__title">
+        <h2 class="text-center font-weight-bold">Nos partenaires</h2>
+        <section class="customer-logos">
+            <div class="slide"><img src="img/collab/biognost.png" alt="logo"></div>
+            <div class="slide"><img src="img/collab/cdh.png" alt="logo"></div>
+            <div class="slide"><img src="img/collab/Gemmyco.png" alt="logo"></div>
+            <div class="slide"><img src="img/collab/henso.png" alt="logo"></div>
+            <div class="slide"><img src="img/collab/mediaPlus.png" alt="logo"></div>
+            <div class="slide"><img src="img/collab/rapide_esponse.png" alt="logo"></div>
+            <div class="slide"><img src="img/collab/wexis.png" alt="logo"></div>
+        </section>
+        </div>
+    </div>
+
+    
+
+   <script>
+    $(document).ready(function(){
+        $('.customer-logos').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                },
+                {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+
+</body>
+</html>
