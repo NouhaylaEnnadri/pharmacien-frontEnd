@@ -65,7 +65,8 @@
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" class="form-control" id="productDescription" required>
+                            <textarea class="form-control" id="productDescription" required rows="5" cols="33">
+                                </textarea>
                         </div>
                         <div class="form-group">
                             <label>Category</label>
@@ -88,6 +89,46 @@
             </div>
         </div>
     </div>
+    <!-- Edit Product Modal HTML -->
+<div id="editEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editProductForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="editProductName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" id="editProductDescription" required rows="5" cols="33"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select class="form-control" id="editProductCategory" name="category" required>
+                            <option value="category1">Category 1</option>
+                            <option value="category2">Category 2</option>
+                            <option value="category3">Category 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" id="editProductImage" name="image" accept="image/*" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick="updateProduct()">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
