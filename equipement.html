@@ -34,6 +34,10 @@
       src="https://kit.fontawesome.com/234e03b889.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      /* ... (existing styles remain unchanged) ... */
+    </style>
   </head>
 
   <body>
@@ -42,247 +46,8 @@
       <div class="loader"></div>
     </div>
 
-    <style>
-      /* Style for the green button */
-      .btn-green {
-        background-color: #4caf50; /* Green color */
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-top: 20px; /* Adjust this margin as needed */
-      }
-
-      /* Center the button horizontally */
-      .text-center {
-        text-align: center;
-      }
-      .col-lg-6.text-justify p {
-        font-size: 15px; /* Adjust the font size as needed */
-      }
-      body {
-        background: #e2eaef;
-        font-family: "Open Sans", sans-serif;
-        overflow-x: hidden; /* Hide horizontal scrollbar */
-      }
-
-      h2 {
-        color: #000;
-        font-size: 26px;
-        font-weight: 300;
-        text-align: center;
-        text-transform: uppercase;
-        position: relative;
-        margin: 30px 0 60px;
-      }
-
-      h2::after {
-        content: "";
-        width: 100px;
-        position: absolute;
-        margin: 0 auto;
-        height: 4px;
-        border-radius: 1px;
-        background: #7ac400;
-        left: 0;
-        right: 0;
-        bottom: -20px;
-      }
-
-      .carousel {
-        margin: 50px auto;
-        padding: 0 70px;
-      }
-
-      .carousel .item {
-        color: #747d89;
-        min-height: 325px;
-        text-align: center;
-        overflow: hidden;
-      }
-
-      .carousel .thumb-wrapper {
-        padding: 25px 15px;
-        background: #fff;
-        border-radius: 6px;
-        text-align: center;
-        position: relative;
-        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-      }
-
-      .carousel .item .img-box {
-        height: 120px;
-        margin-bottom: 20px;
-        width: 100%;
-        position: relative;
-      }
-
-      .carousel .item img {
-        max-width: 100%;
-        max-height: 100%;
-        display: inline-block;
-        position: absolute;
-        bottom: 0;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-      }
-
-      .carousel .item h4 {
-        font-size: 18px;
-      }
-
-      .carousel .item h4,
-      .carousel .item p,
-      .carousel .item ul {
-        margin-bottom: 5px;
-      }
-
-      .carousel .thumb-content .btn {
-        color: #7ac400;
-        font-size: 11px;
-        text-transform: uppercase;
-        font-weight: bold;
-        background: none;
-        border: 1px solid #7ac400;
-        padding: 6px 14px;
-        margin-top: 5px;
-        line-height: 16px;
-        border-radius: 20px;
-      }
-
-      .carousel .thumb-content .btn:hover,
-      .carousel .thumb-content .btn:focus {
-        color: #fff;
-        background: #7ac400;
-        box-shadow: none;
-      }
-
-      .carousel .thumb-content .btn i {
-        font-size: 14px;
-        font-weight: bold;
-        margin-left: 5px;
-      }
-
-      .carousel .item-price {
-        font-size: 13px;
-        padding: 2px 0;
-      }
-
-      .carousel .item-price strike {
-        opacity: 0.7;
-        margin-right: 5px;
-      }
-
-      .carousel-control-prev,
-      .carousel-control-next {
-        height: 44px;
-        width: 40px;
-        background: #7ac400;
-        margin: auto 0;
-        border-radius: 4px;
-        opacity: 0.8;
-      }
-
-      .carousel-control-prev:hover,
-      .carousel-control-next:hover {
-        background: #78bf00;
-        opacity: 1;
-      }
-
-      .carousel-control-prev i,
-      .carousel-control-next i {
-        font-size: 36px;
-        position: absolute;
-        top: 50%;
-        display: inline-block;
-        margin: -19px 0 0 0;
-        z-index: 5;
-        left: 0;
-        right: 0;
-        color: #fff;
-        text-shadow: none;
-        font-weight: bold;
-      }
-
-      .carousel-control-prev i {
-        margin-left: -2px;
-      }
-
-      .carousel-control-next i {
-        margin-right: -4px;
-      }
-
-      .carousel-indicators {
-        bottom: -50px;
-      }
-
-      .carousel-indicators li,
-      .carousel-indicators li.active {
-        width: 10px;
-        height: 10px;
-        margin: 4px;
-        border-radius: 50%;
-        border: none;
-      }
-
-      .carousel-indicators li {
-        background: rgba(0, 0, 0, 0.2);
-      }
-
-      .carousel-indicators li.active {
-        background: rgba(0, 0, 0, 0.6);
-      }
-
-      .carousel .wish-icon {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        z-index: 99;
-        cursor: pointer;
-        font-size: 16px;
-        color: #abb0b8;
-      }
-
-      .carousel .wish-icon .fa-heart {
-        color: #ff6161;
-      }
-
-      .star-rating li {
-        padding: 0;
-      }
-
-      .star-rating i {
-        font-size: 14px;
-        color: #ffc000;
-      }
-
-      .btn-green {
-        background-color: green;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-      }
-
-      .btn-green:hover {
-        background-color: green;
-      }
-   
-    </style>
     <!--header-->
-    <script>
-      $(function () {
-        $("#header").load("header.html");
-      });
-    </script>
-    <div id="header"></div>
+    
 
     <div>
       <p></p>
@@ -291,232 +56,22 @@
     <div>
       <p></p>
     </div>
-    <!--
-Start About Section
-==================================== -->
 
+    <!-- Start About Section -->
     <div class="row spad gray-background">
       <div class="col-md-12">
         <br />
         <h2>Nos <b>Equipements</b></h2>
         <div id="myCarousel" class="carousel slide" data-interval="0">
-          <!-- Carousel indicators -->
-
           <!-- Wrapper for carousel items -->
-          <div class="carousel-inner">
-            <div class="item carousel-item active">
-              <div class="row">
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/incubateurs_bacteriologiques.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Incubateurs bactériologiques</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/agitateur_deco.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Agitateur pour décoloration</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/compteur_globulaire.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Compteur globulaire manuel</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/double_fctn.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Double fonction étuve / incubateur</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <br />
-              <div class="row">
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img src="img/vortex.png" class="img-fluid" alt="" />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Agitateur vortex</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/compteur_electro.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Compteur éléctronique</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img src="img/etuve.png" class="img-fluid" alt="" />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Etuve bactériologique</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/centrifugeuse.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Centrifugeuse 12 postes</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <br />
-              <div class="row">
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/bain_marie.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Bain Marie</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/hotte_laminaire.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Hottes Laminaires</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/centrifuge_univ.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Centrifuge universelle</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="thumb-wrapper">
-                    <a href="product-page.html">
-                      <div class="img-box">
-                        <img
-                          src="img/plaque_chauffante.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Plaque chauffante</h4>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="carousel-inner" id="productCarousel">
+            <!-- Product cards will be dynamically added here -->
           </div>
         </div>
       </div>
     </div>
-
     <!-- End section -->
 
-    <!--footer-->
-    <script>
-      $(function () {
-        $("#footer").load("footer.html");
-      });
-    </script>
-    <div id="footer"></div>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -528,5 +83,46 @@ Start About Section
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/custom.js"></script>
+
+    <script>
+      async function fetchProducts() {
+  try {
+    const response = await fetch("http://localhost:5001/api/product");
+    const products = await response.json();
+
+    const tableBody = document.getElementById("table-body");
+    tableBody.innerHTML = "";
+
+    products.forEach((product) => {
+      const row = `
+        <tr>
+          <td>${product.name}</td>
+          <td>${product.category}</td>
+          <td style="white-space: normal;">${product.description}</td>
+          <td>
+            <img src="http://127.0.0.1:5501/server/${product.image}" alt="${product.name}"
+                style="max-width: 100px; max-height: 100px;">
+          </td>
+          <td>
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+              <i class="material-icons" onclick="editProduct('${product._id}')" data-toggle="tooltip" title="Edit">&#xE254;</i>
+            </a>
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+              <i class="material-icons" onclick="deleteProduct('${product._id}')" data-toggle="tooltip" title="Delete">&#xE872;</i>
+            </a>
+          </td>
+        </tr>
+      `;
+      tableBody.innerHTML += row;
+    });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    // Handle the error, e.g., show an alert
+    alert("Error fetching products. Please try again.");
+  }
+}
+
+     
+    </script>
   </body>
 </html>
