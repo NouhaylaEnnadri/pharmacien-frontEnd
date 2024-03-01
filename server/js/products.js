@@ -12,6 +12,8 @@ async function fetchProducts() {
         <tr>
           <td>${product.name}</td>
           <td>${product.category}</td>
+          <td>${product.subCategory}</td>
+
           <td style="white-space: normal;">${product.description}</td>
           <td>
             <img src="http://127.0.0.1:5501/server/${product.image}" alt="${product.name}"
@@ -32,9 +34,9 @@ async function fetchProducts() {
   } catch (error) {
     console.error("Error fetching products:", error);
     // Handle the error, e.g., show an alert
-    alert("Error fetching products. Please try again.");
   }
 }
+fetchProducts();
 
 // Function to submit the product form
 async function submitForm() {
@@ -42,13 +44,17 @@ async function submitForm() {
     const name = document.getElementById("productName").value;
     const description = document.getElementById("productDescription").value;
     const category = document.getElementById("productCategory").value;
+    const subCategory = document.getElementById("productSubcategory").value;
+
     const imageInput = document.getElementById("productImage");
     const image = imageInput.files[0];
 
     const formData = new FormData();
     formData.append("name", name);
     formData.append("description", description);
+    formData.append("subCategory", subCategory);
     formData.append("category", category);
+
     formData.append("image", image);
 
     const response = await fetch("http://localhost:5001/api/product", {
@@ -61,15 +67,12 @@ async function submitForm() {
 
     if (response.ok) {
       console.log(data.message);
-      fetchProducts(); // Refresh the product list after successful submission
     } else {
       console.log(data.message);
       // Handle failed submission, display error message, etc.
-      alert(`Failed to add product: ${data.message}`);
     }
   } catch (error) {
     console.error("Fetch error:", error);
-    alert("Failed to fetch. Please check your network connection.");
   }
 }
 

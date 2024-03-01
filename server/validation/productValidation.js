@@ -5,6 +5,7 @@ const productValidation = (data) => {
     description: Joi.string().required(),
     date: Joi.date(),
     category: Joi.string(),
+    subCategory: Joi.string(),
     image: Joi.string(),
   });
   return schema.validate(data);

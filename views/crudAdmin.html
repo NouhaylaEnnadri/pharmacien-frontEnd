@@ -35,6 +35,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Category</th>
+                        <th>Subcategory</th> <!-- Added Subcategory column -->
                         <th>Description</th>
                         <th>Image</th>
                         <th>Actions</th>
@@ -65,15 +66,23 @@
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" id="productDescription" required rows="5" cols="33">
-                                </textarea>
+                            <textarea class="form-control" id="productDescription" required rows="5" cols="33"></textarea>
+
                         </div>
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="form-control" id="productCategory" name="category" required>
-                                <option value="category1">Category 1</option>
-                                <option value="category2">Category 2</option>
-                                <option value="category3">Category 3</option>
+                            <select class="form-control" id="productCategory" name="category" required onchange="updateSubcategories()">
+                                <option value="sub">SubCategories</option>
+                                <option value="produits anapath">produits anapath</option>
+                                <option value="microscopes">microscopes</option>
+                                <option value="équipements">équipements</option>
+    
+                            </select>
+                        </div>
+                        <div class="form-group" id="subcategoriesGroup" style="display: none;">
+                            <label>Subcategory</label>
+                            <select class="form-control" id="productSubcategory" name="subcategory" required>
+                                <!-- Subcategories will be dynamically added here -->
                             </select>
                         </div>
                         <div class="form-group">
@@ -109,10 +118,17 @@
                     </div>
                     <div class="form-group">
                         <label>Category</label>
-                        <select class="form-control" id="editProductCategory" name="category" required>
-                            <option value="category1">Category 1</option>
-                            <option value="category2">Category 2</option>
-                            <option value="category3">Category 3</option>
+                        <select class="form-control" id="productCategory" name="category" required onchange="updateSubcategories()">
+                            <option value="produits anapath">produits anapath</option>
+                            <option value="microscopes">microscopes</option>
+                            <option value="équipements">équipements</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group" id="subcategoriesGroup" style="display: none;">
+                        <label>Subcategory</label>
+                        <select class="form-control" id="productSubcategory" name="subcategory" required>
+                            <!-- Subcategories will be dynamically added here -->
                         </select>
                     </div>
                     <div class="form-group">
@@ -133,7 +149,48 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../server/js/products.js"></script>
-
+    <script>
+        function updateSubcategories() {
+            var category = document.getElementById("productCategory").value;
+            var subcategoriesGroup = document.getElementById("subcategoriesGroup");
+            var subcategoryDropdown = document.getElementById("productSubcategory");
+    
+            // Clear existing subcategories
+            subcategoryDropdown.innerHTML = "";
+    
+            // Check selected category and add subcategories accordingly
+            if (category === "équipements") {
+                // Add subcategories for "équipements"
+                addSubcategoryOption("Réactifs d'anatomo-pathologie");
+                addSubcategoryOption("Colorants / Poudres");
+                addSubcategoryOption("Cytologie monocouche");
+                addSubcategoryOption("Consommables");
+                addSubcategoryOption("Matériaux");
+            } else if (category === "produits anapath") {
+                addSubcategoryOption("produits anapath");
+                return;  // Exit the function early
+            } else if (category === "microscopes") {
+                // Add subcategories for "microscopes"
+                addSubcategoryOption("Microscope binoculaire et trinoculaire");
+                addSubcategoryOption("Microscope à fluorescence");
+                addSubcategoryOption("Microscope LCD");
+                addSubcategoryOption("Caméra microscope");
+                addSubcategoryOption("Loupe binoculaire");
+            }
+    
+            // Display or hide subcategories based on the selected category
+            subcategoriesGroup.style.display = category === "équipements" || category === "microscopes" ? "block" : "none";
+        }
+    
+        function addSubcategoryOption(subcategory) {
+            var subcategoryDropdown = document.getElementById("productSubcategory");
+            var option = document.createElement("option");
+            option.value = subcategory;
+            option.text = subcategory;
+            subcategoryDropdown.add(option);
+        }
+    </script>
+    
 </body>
 
 </html>

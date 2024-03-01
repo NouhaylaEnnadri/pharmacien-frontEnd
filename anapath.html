@@ -14,9 +14,6 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" type="text/css" href="anapath.css">
-
-
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -34,13 +31,24 @@
     <link rel="stylesheet" href="css/here.css" type="text/css" />
     <link rel="stylesheet" href="css/test.css" type="text/css" />
     <link rel="stylesheet" href="css/categories.css" type="text/css" />
-
+    <script>
+      $(document).ready(function () {
+          // Fetch products of category "equipements"
+          fetchProducts("produits anapath");
+      });
+  </script>
     <script
       src="https://kit.fontawesome.com/234e03b889.js"
       crossorigin="anonymous"
     ></script>
   </head>
-
+  <style>
+  
+  </style>
+  
+  
+  
+  
   <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -51,11 +59,10 @@
     <!--header-->
     <script>
       $(function () {
-        $("#header").load("header.html");
+        $("#header").load("views/include/header.html");
       });
     </script>
     <div id="header"></div>
-
     <div>
       <p></p>
       <br />
@@ -66,102 +73,20 @@
     <!--
 Start About Section
 ==================================== -->
+<!-- Start About Section -->
+<div class="row spad gray-background">
+  <div class="col-md-12">
+    <br />
+    <h2>Nos <b>Equipements</b></h2>
+    <div id="productContainer" class="row">
+      <!-- Products will be dynamically added here by JavaScript -->
+    </div>
+  </div>
+</div>
+<!-- End section -->
 
-    <section class="featured spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title">
-              <h2>Produits<b> ANAPATH</b></h2>
-            </div>
-            <div class="featured__controls">
-              <ul>
-                <li class="active" data-filter="*">Tout</li>
-                <li data-filter=".réactifs">Réactifs D’Anatomo-Pathologie</li>
-                <li data-filter=".colorants">Colorants / Poudres</li>
-                <li data-filter=".cytologie_monocouche">
-                  Cytologie monocouche
-                </li>
-                <li data-filter=".consommables">Consommables</li>
-                <li data-filter=".matériaux">Matériaux</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row featured__filter">
-         
-          
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 mix matériaux"
-          >
-            <div class="featured__item">
-              <div
-                class="featured__item__pic set-bg"
-                data-setbg="img/product5.png"
-              >
-              </div>
-              <div class="featured__item__text">
-                <h6><a href="#">Distributeur De Paraffine</a></h6>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-sm-6 mix réactifs">
-            <div class="featured__item">
-              <div class="featured__item__pic set-bg" data-setbg="img/product5.png">
-                <a href="product-page.html"></a>
-              </div>
-              <div class="featured__item__text">
-                <h6><a href="product-page.html">Décalcifiant rapide 1L</a></h6>
-              </div>
-            </div>
-          </div>      
-          
-          <div class="col-lg-3 col-md-4 col-sm-6 mix cytologie_monocouche">
-            <div class="featured__item">
-              <div
-                class="featured__item__pic set-bg"
-                data-setbg="img/product5.png"
-              >
-              </div>
-              <div class="featured__item__text">
-                <h6><a href="#">LIQUI-PREP CYTOLOGIE KIT 2</a></h6>
-              </div>
-            </div>
-          </div>
-          
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 mix consommables"
-          >
-            <div class="featured__item">
-              <div
-                class="featured__item__pic set-bg"
-                data-setbg="img/product5.png"
-              >
-              </div> 
-              <div class="featured__item__text">
-                <h6><a href="#">Lame chargée</a></h6>
-              </div>
-            </div>
-          </div>
-          
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 mix colorants"
-          >
-            <div class="featured__item">
-              <div
-                class="featured__item__pic set-bg"
-                data-setbg="img/product5.png"
-              >
-              </div>
-              <div class="featured__item__text">
-                <h6><a href="#">Eosine bleu 25g</a></h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- End section -->
+   
     <!-- End section -->
 
     <!--footer-->
@@ -173,14 +98,17 @@ Start About Section
     <div id="footer"></div>
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+<script src="/server/js/fetchProducts.js"></script>
+
+
   </body>
 </html>

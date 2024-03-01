@@ -30,25 +30,39 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/here.css" type="text/css" />
     <link rel="stylesheet" href="css/test.css" type="text/css" />
+    <link rel="stylesheet" href="css/categories.css" type="text/css" />
+    <script>
+      $(document).ready(function () {
+          // Fetch products of category "equipements"
+          fetchProducts("équipements");
+      });
+  </script>
     <script
       src="https://kit.fontawesome.com/234e03b889.js"
       crossorigin="anonymous"
     ></script>
-
-    <style>
-      /* ... (existing styles remain unchanged) ... */
-    </style>
   </head>
-
+  <style>
+  
+  </style>
+  
+  
+  
+  
   <body>
     <!-- Page Preloder -->
     <div id="preloder">
       <div class="loader"></div>
     </div>
 
+   
     <!--header-->
-    
-
+    <script>
+      $(function () {
+        $("#header").load("views/include/header.html");
+      });
+    </script>
+    <div id="header"></div>
     <div>
       <p></p>
       <br />
@@ -56,73 +70,45 @@
     <div>
       <p></p>
     </div>
-
-    <!-- Start About Section -->
-    <div class="row spad gray-background">
-      <div class="col-md-12">
-        <br />
-        <h2>Nos <b>Equipements</b></h2>
-        <div id="myCarousel" class="carousel slide" data-interval="0">
-          <!-- Wrapper for carousel items -->
-          <div class="carousel-inner" id="productCarousel">
-            <!-- Product cards will be dynamically added here -->
-          </div>
-        </div>
-      </div>
+    <!--
+Start About Section
+==================================== -->
+<!-- Start About Section -->
+<div class="row spad gray-background">
+  <div class="col-md-12">
+    <br />
+    <h2>Nos <b>Equipements</b></h2>
+    <div id="productContainer" class="row">
+      <!-- Products will be dynamically added here by JavaScript -->
     </div>
+  </div>
+</div>
+<!-- End section -->
+
+<!-- End section -->
+   
     <!-- End section -->
 
+    <!--footer-->
+    <script>
+      $(function () {
+        $("#footer").load("footer.html");
+      });
+    </script>
+    <div id="footer"></div>
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+<script src="/server/js/fetchProducts.js"></script>
 
-    <script>
-      async function fetchProducts() {
-  try {
-    const response = await fetch("http://localhost:5001/api/product");
-    const products = await response.json();
 
-    const tableBody = document.getElementById("table-body");
-    tableBody.innerHTML = "";
-
-    products.forEach((product) => {
-      const row = `
-        <tr>
-          <td>${product.name}</td>
-          <td>${product.category}</td>
-          <td style="white-space: normal;">${product.description}</td>
-          <td>
-            <img src="http://127.0.0.1:5501/server/${product.image}" alt="${product.name}"
-                style="max-width: 100px; max-height: 100px;">
-          </td>
-          <td>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <i class="material-icons" onclick="editProduct('${product._id}')" data-toggle="tooltip" title="Edit">&#xE254;</i>
-            </a>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <i class="material-icons" onclick="deleteProduct('${product._id}')" data-toggle="tooltip" title="Delete">&#xE872;</i>
-            </a>
-          </td>
-        </tr>
-      `;
-      tableBody.innerHTML += row;
-    });
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    // Handle the error, e.g., show an alert
-    alert("Error fetching products. Please try again.");
-  }
-}
-
-     
-    </script>
   </body>
 </html>

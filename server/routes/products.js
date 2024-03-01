@@ -37,7 +37,7 @@ router.post("/", uploadWithStorage.single("image"), async (req, res) => {
     const { error } = productValidation(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
-    const { name, description, category } = req.body;
+    const { name, description, category, subCategory } = req.body;
     const image = req.file; // Access the uploaded file from req.file
 
     // Check if the product already exists
@@ -52,6 +52,7 @@ router.post("/", uploadWithStorage.single("image"), async (req, res) => {
       name,
       description,
       category,
+      subCategory,
       image: image ? `/uploads/${image.filename}` : null,
     });
 
@@ -59,10 +60,10 @@ router.post("/", uploadWithStorage.single("image"), async (req, res) => {
     await newProduct.save();
 
     res.status(201).json({
-      _id: newProduct._id,
       name: newProduct.name,
       description: newProduct.description,
       category: newProduct.category,
+      subCategory : newProduct.subCategory,
       image: newProduct.image,
     });
   } catch (error) {
@@ -146,6 +147,5 @@ router.get("/:id", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
-
 
 module.exports = router;

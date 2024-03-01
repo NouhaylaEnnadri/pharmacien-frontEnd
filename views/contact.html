@@ -37,18 +37,23 @@
   </head>
 
   <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-      <div class="loader"></div>
-    </div>
-
     <!--header-->
      <!--header-->
-     <script>
+    <script>
       $(function () {
-        $("#header").load("views/include/header.html");
+        $("#includeHtml").load("../../views/include/header.html");
       });
     </script>
+    <div id="includeHtml"></div>
+    
+    <style>
+      /* Add a specific class to the logo for contact.html */
+      #includeHtml .logo img.contact-logo {
+        max-width: 60%;
+        height: auto;
+        display: block;
+      }
+    </style>
     <div id="includeHtml"></div>
     <!-- Header Section End -->
     <div><br /><br /><br /><br /><br /></div>
